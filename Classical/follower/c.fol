@@ -1,0 +1,11 @@
+unames = {1:'n1', 2:'n2', 3:'n3', 4:'m1', 5:'m2', 6:'m3', 7:'r1', 8:'r2', 9:'r3', 10:'q0',11:'q1',12:'q2', 13:'q3'}
+parnames = {1: "$\lambda$", 2:'$\mu$', 3:'Out of plane displacement', 4:'MAX out plane'}
+NDIM=   13, IPS =   4, IRS =   0, ILP =   1, ISP = 2
+ICP = [1, 2, 3, 4],
+NTST=  200, NCOL=   4, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 14, NINT= 0
+NMX=  2000, NPR=  20, MXBF=  1, IID =   2, ITMX= 8, ITNW= 6, NWTN= 3, JAC= 0
+EPSL= 1e-06, EPSU = 1e-06, EPSS =0.0001
+DS  =  0.1, DSMIN= 0.1, DSMAX=   0.5, IADS=   1
+RL0 = 0, RL1 = 50
+
+
