@@ -4,7 +4,7 @@ ICP = [1, 2, 3, 4],
 NTST=  200, NCOL=   4, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 26, NINT= 0
 NMX=  2000, NPR=  20, MXBF=  1, IID =   2, ITMX= 8, ITNW= 6, NWTN= 3, JAC= 0
 EPSL= 1e-06, EPSU = 1e-06, EPSS =0.0001
-DS  =  500, DSMIN= 500, DSMAX=   1500, IADS=   0
-RL0 = 0.0 RL1 = 5
+DS  =  1, DSMIN= 1, DSMAX=   15, IADS=   0
+RL0 = 0.0 RL1 = 20
 
 
