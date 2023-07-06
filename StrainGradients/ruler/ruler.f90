@@ -12,7 +12,7 @@
         INTEGER i, j
         DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
 
-        l = 0.0005
+        l = 0.01
         
         C1 = 10.0
         C2 = 10.0
@@ -160,7 +160,7 @@
         INTEGER i, j
         DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
 
-        l = 0.0005
+        l = 0.01
         C1 = 10.0
         C2 = 10.0
         C3 = 20.0
