@@ -12,11 +12,11 @@
         INTEGER i, j
         DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
 
-        l = 0.05
+        l = 0.0005
         
-        C1 = 10.0 ** 10
-        C2 = 10.0 ** 10
-        C3 = 10.0 ** 10
+        C1 = 1.0 * 10 ** 5
+        C2 = 1.0 * 10 ** 5
+        C3 = 2.0 * 10 ** 5
         
         CC1 = l * l * C1
         CC2 = l * l * C2
@@ -64,12 +64,7 @@
         A(1, 3) = -0.5 * q(4)
         A(2, 2) = -0.5 * q(4)
         A(3, 1) =  0.5 * q(4)
-		v(1) = 0
-		v(2) = 0
-		v(3) = 1
-		v1(1) = 0
-		v1(2) = 0
-		v1(3) = 0
+	
         F(1) = v2(1)
         F(2) = v2(2)
         F(3) = v2(3)
@@ -165,18 +160,18 @@
         INTEGER i, j
         DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
 
-        l = 0.05
-        C1 = 10.0 ** 10
-        C2 = 10.0 ** 10
-        C3 = 10.0 ** 10
+        l = 0.0005
+        C1 = 1.0 * 10 ** 5
+        C2 = 1.0 * 10 ** 5
+        C3 = 2.0 * 10 ** 5
         
         CC1 = l * l * C1
         CC2 = l * l * C2
         CC3 = l * l * C3
 
-        D1 = 10.0 + l * l 
-        D2 = 1.0 + l * l 
-        D3 = 1.0 + 2 * l * l 
+        D1 = 10.0 + l * l
+        D2 = 1.0 + l * l
+        D3 = 1.0 + 2 * l * l
 
         DD1 = 10.0 * l * l
         DD2 = 1.0 * l * l
@@ -327,9 +322,9 @@
 
       DOUBLE PRECISION, EXTERNAL :: GETP
       !out of plane displacement at s = 1
-      PAR(3)=GETP('BV1',7,U)
+      PAR(3)=GETP('BV1',8,U)
       !out of place displacement MAX
-      PAR(4)=GETP('MAX',7,U)
+      PAR(4)=GETP('MAX',8,U)
 
       END SUBROUTINE PVLS
 
