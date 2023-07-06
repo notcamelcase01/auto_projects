@@ -12,9 +12,9 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
         INTEGER i, j
         DOUBLE PRECISION C1, C2, C3, D1, D2, D3
 		
-		C1 = 1.0 * 10 ** 5
-		C2 = 1.0 * 10 ** 5
-		C3 = 2.0 * 10 ** 5
+		C1 = 10.0
+		C2 = 10.0 
+		C3 = 20.0 
 		
 		D1 = 10.0
 		D2 = 1.0
@@ -112,9 +112,9 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
         DOUBLE PRECISION, INTENT(INOUT) :: DBC(NBC,*)
         DOUBLE PRECISION C1, C2, C3, D1, D2, D3
 		
-		C1 = 1.0 * 10 ** 5
-		C2 = 1.0 * 10 ** 5
-		C3 = 2.0 * 10 ** 5
+		C1 = 10.0
+		C2 = 10.0 
+		C3 = 20.0 
 		
 		D1 = 10.0
 		D2 = 1.0
@@ -167,9 +167,9 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
 
       DOUBLE PRECISION, EXTERNAL :: GETP
       !out of plane displacement at s = 1
-      PAR(3)=GETP('BV1',8,U)
+      PAR(3)=GETP('BV1',7,U)
       !out of place displacement MAX
-      PAR(4)=GETP('MAX',8,U)
+      PAR(4)=GETP('MAX',7,U)
 
       END SUBROUTINE PVLS
       
