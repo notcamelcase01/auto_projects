@@ -14,17 +14,17 @@
 
         l = 0.0005
         
-        C1 = 1.0 * 10 ** 5
-        C2 = 1.0 * 10 ** 5
-        C3 = 2.0 * 10 ** 5
+        C1 = 10.0
+        C2 = 10.0
+        C3 = 20.0
         
         CC1 = l * l * C1
         CC2 = l * l * C2
         CC3 = l * l * C3
 
-        D1 = 10.0 + l * l 
-        D2 = 1.0 + l * l 
-        D3 = 1.0 + 2 * l * l 
+        D1 = 10.0 + l * l * C1
+        D2 = 1.0 + l * l * C2
+        D3 = 1.0 + 2 * l * l * C3
 
         DD1 = 10.0 * l * l
         DD2 = 1.0 * l * l
@@ -161,17 +161,17 @@
         DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
 
         l = 0.0005
-        C1 = 1.0 * 10 ** 5
-        C2 = 1.0 * 10 ** 5
-        C3 = 2.0 * 10 ** 5
+        C1 = 10.0
+        C2 = 10.0
+        C3 = 20.0
         
         CC1 = l * l * C1
         CC2 = l * l * C2
         CC3 = l * l * C3
 
-        D1 = 10.0 + l * l
-        D2 = 1.0 + l * l
-        D3 = 1.0 + 2 * l * l
+        D1 = 10.0 + l * l * C1
+        D2 = 1.0 + l * l * C2
+        D3 = 1.0 + 2 * l * l * C3
 
         DD1 = 10.0 * l * l
         DD2 = 1.0 * l * l
@@ -322,9 +322,9 @@
 
       DOUBLE PRECISION, EXTERNAL :: GETP
       !out of plane displacement at s = 1
-      PAR(3)=GETP('BV1',8,U)
+      PAR(3)=GETP('BV1',7,U)
       !out of place displacement MAX
-      PAR(4)=GETP('MAX',8,U)
+      PAR(4)=GETP('MAX',7,U)
 
       END SUBROUTINE PVLS
 
