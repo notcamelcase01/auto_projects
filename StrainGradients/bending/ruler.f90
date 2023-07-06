@@ -275,9 +275,9 @@
             END DO
             
                         
-            FB(17) = FB(17) + rv(2) * r_dash(3) - rv(3) * r_dash(2)
-            FB(18) = FB(18) + rv(3) * r_dash(1) - rv(1) * r_dash(3) - PAR(1)
-            FB(19) = FB(19) + rv(1) * r_dash(2) - rv(2) * r_dash(1)
+            FB(17) = FB(17) - (rv(2) * r_dash(3) - rv(3) * r_dash(2))
+            FB(18) = FB(18) - (rv(3) * r_dash(1) - rv(1) * r_dash(3)) - PAR(1)
+            FB(19) = FB(19) - (rv(1) * r_dash(2) - rv(2) * r_dash(1))
             
             FB(20) = U1(10) * U1(10) + U1(11) * U1(11) + U1(12) * U1(12) + U1(13) * U1(13) - 1.0
 		

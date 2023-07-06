@@ -10,18 +10,20 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
         DOUBLE PRECISION, DIMENSION(4, 3) :: A
         DOUBLE PRECISION, DIMENSION(3, 3) :: R0
         INTEGER i, j
-        DOUBLE PRECISION C1, C2, C3, D1, D2, D3
-		
-		C1 = 10.0 ** 10
-		C2 = 10.0 ** 10
-		C3 = 10.0 ** 10
+        DOUBLE PRECISION  D1, D2, D3. DD1, DD2, DD3, l
+        
+		l = 0.05
 		
 		D1 = 10.0
 		D2 = 1.0
 		D3 = 1.0
 		
+		DD1 = 10.0 * l * l
+		DD2 = l * l
+		DD3 = l * l
+		
         DO i = 1, 3
-            mu(i) = U(i)
+            n(i) = U(i)
             kappa(i) = U(3 + i)
             r(i) = U(6 + i)
             q(i) = U(9 + i)
