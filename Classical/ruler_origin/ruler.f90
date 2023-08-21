@@ -5,26 +5,48 @@
         DOUBLE PRECISION, INTENT(IN) :: U(NDIM), PAR(*)
         DOUBLE PRECISION, INTENT(OUT) :: F(NDIM)
         DOUBLE PRECISION, INTENT(INOUT) :: DFDU(NDIM, NDIM), DFDP(NDIM,*)
-        DOUBLE PRECISION, DIMENSION(3) :: mu, kappa, n, m, r
+        DOUBLE PRECISION, DIMENSION(3) :: mu, kappa, n, m, r, nb, mb, m1, n1   
         DOUBLE PRECISION, DIMENSION(4) :: q
         DOUBLE PRECISION, DIMENSION(4, 3) :: A
         DOUBLE PRECISION, DIMENSION(3, 3) :: R0
         INTEGER i, j
+		DOUBLE PRECISION C1, C2, C3, CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3, l
+
+        l = 0.05
+        
+        C1 = 10.0
+        C2 = 10.0
+        C3 = 20.0
+        
+        CC1 = l * l * C1
+        CC2 = l * l * C2
+        CC3 = l * l * C3
+
+        D1 = 10.0 + l * l * C1
+        D2 = 1.0 + l * l * C2
+        D3 = 1.0 + 2 * l * l * C3
+
+        DD1 = 10.0 * l * l
+        DD2 = 1.0 * l * l
+        DD3 = 1.0 * l * l
 
         DO i = 1, 3
             n(i) = U(i)
             m(i) = U(3 + i)
             r(i) = U(6 + i)
             q(i) = U(9 + i)
+            mb(i) = U(13 + i)
+            nb(i) = U(16 + i)
+            m1(i) = U(19 + i)
+            n1(i) = U(22 + i)
         END DO
 
         q(4) = U(13)
         mu(1) = 0.0
         mu(2) = 0.0
         
-        mu(3) = EXP(n(3) / 20.0) 
-        !mu(3) = 10.0 ** (n(3)) / 5
-        !PRINT *, EXP(1.0)
+        mu(3) = 1.0
+		
         kappa(1) = m(1) / 10.0
         kappa(2) = m(2) 
         kappa(3) = m(3) 
