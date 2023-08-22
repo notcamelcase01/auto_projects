@@ -7,4 +7,3 @@ NMX=  2000, NPR=  20, MXBF=  1, IID =   2, ITMX= 8, ITNW= 6, NWTN= 3, JAC= 0
 EPSL= 1e-06, EPSU = 1e-06, EPSS =0.0001
 DS  =  0.1, DSMIN= 0.1, DSMAX=   0.5, IADS=   1
 RL0 = 0, RL1 = 10
-UZR= {1: [3.0]}
