@@ -10,13 +10,14 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
         DOUBLE PRECISION, DIMENSION(4, 3) :: A
         DOUBLE PRECISION, DIMENSION(3, 3) :: R0
         INTEGER i, j
-        DOUBLE PRECISION C1, C2, C3, D1, D2, D3
+        DOUBLE PRECISION C1, C2, C3, D1, D2, D3, alpha
+		alpha = 10000000
 		
 		C1 = 10.0
 		C2 = 10.0 
 		C3 = 20.0 
 		
-		D1 = 10.0
+		D1 = alpha
 		D2 = 1.0
 		D3 = 1.0
 		
@@ -110,13 +111,13 @@ SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
         DOUBLE PRECISION, INTENT(IN) :: PAR(*), U0(NDIM), U1(NDIM)
         DOUBLE PRECISION, INTENT(OUT) :: FB(NBC)
         DOUBLE PRECISION, INTENT(INOUT) :: DBC(NBC,*)
-        DOUBLE PRECISION C1, C2, C3, D1, D2, D3
-		
+        DOUBLE PRECISION C1, C2, C3, D1, D2, D3, alpha
+		alpha = 10000000
 		C1 = 10.0
 		C2 = 10.0 
 		C3 = 20.0 
 		
-		D1 = 10.0
+		D1 = alpha
 		D2 = 1.0
 		D3 = 1.0
         
