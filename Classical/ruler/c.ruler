@@ -6,4 +6,4 @@ NTST=  200, NCOL=   4, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 14, NINT= 0
 NMX=  2000, NPR=  20, MXBF=  1, IID =   2, ITMX= 8, ITNW= 6, NWTN= 3, JAC= 0
 EPSL= 1e-06, EPSU = 1e-06, EPSS =0.0001
 DS  =  0.1, DSMIN= 0.9001, DSMAX=   0.5, IADS=   1
-RL0 = 0, RL1 = 10
+RL0 = 0, RL1 = 7

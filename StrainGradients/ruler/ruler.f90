@@ -1,12 +1,15 @@
 module globals
   implicit none
-  DOUBLE PRECISION :: l = 0.0005
-  DOUBLE PRECISION :: C1 = 10
-  DOUBLE PRECISION :: C2 = 10000
-  DOUBLE PRECISION :: C3 = 20
-  DOUBLE PRECISION :: alpha = 1000000
+  DOUBLE PRECISION :: l = 1
+  DOUBLE PRECISION :: C1 = 1
+  DOUBLE PRECISION :: C2 = 1
+  DOUBLE PRECISION :: C3 = 1
+  DOUBLE PRECISION :: alpha = 10
   DOUBLE PRECISION :: sA1 = 1
   DOUBLE PRECISION :: sA2 = 1
+  DOUBLE PRECISION :: aa = 1
+  DOUBLE PRECISION :: bb = 1
+  DOUBLE PRECISION :: kk = 1
 end module globals
 ! ruler with strain gradients
     SUBROUTINE FUNC(NDIM,  U, ICP, PAR, IJAC, F, DFDU, DFDP)
@@ -23,16 +26,16 @@ end module globals
         INTEGER i, j
         DOUBLE PRECISION CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3
 		
-        CC1 = l * l * C1
-        CC2 = l * l * C2
-        CC3 = l * l * C3
+        CC1 = aa * l * l * C1
+        CC2 = bb * l * l * C2
+        CC3 = kk * l * l * C3
 
         D1 = alpha + l * l * C3
         D2 = sA1 + l * l * C3
         D3 = sA2 + l * l * (C1 + C2)
 
         DD1 = alpha * l * l
-        DD2 = sA1 * l * l
+        DD2 = sA1 * l * l  
         DD3 = sA2 * l * l
 	
 
@@ -57,7 +60,7 @@ end module globals
         R0(3, 1) = 2.0 * (q(2) * q(4) - q(1) * q(3))
         R0(2, 3) = 2.0 * (q(3) * q(4) - q(1) * q(2))
         R0(3, 2) = 2.0 * (q(3) * q(4) + q(1) * q(2))
-
+ 
         A(2, 1) =  0.5 * q(1)
         A(3, 2) =  0.5 * q(1)
         A(4, 3) =  0.5 * q(1)
@@ -70,7 +73,7 @@ end module globals
         A(1, 3) = -0.5 * q(4)
         A(2, 2) = -0.5 * q(4)
         A(3, 1) =  0.5 * q(4)
-	
+		
         F(1) = v2(1)
         F(2) = v2(2)
         F(3) = v2(3)
@@ -93,7 +96,8 @@ end module globals
         DO j = 1, 3
             F(13) = F(13) + A(4, j) * k(j)
         END DO
-
+		
+	
         F(14) = v1(1)
         F(15) = v1(2)
         F(16) = v1(3)
@@ -167,9 +171,9 @@ end module globals
         INTEGER i, j
         DOUBLE PRECISION CC1, CC2, CC3, D1, D2, D3, DD1, DD2, DD3
 		
-        CC1 = l * l * C1
-        CC2 = l * l * C2
-        CC3 = l * l * C3
+        CC1 = aa * l * l * C1
+        CC2 = bb * l * l * C2
+        CC3 = kk * l * l * C3
 
         D1 = alpha + l * l * C3
         D2 = sA1 + l * l * C3
@@ -179,7 +183,7 @@ end module globals
         DD2 = sA1 * l * l
         DD3 = sA2 * l * l
 	
-		C(1) = C1
+        C(1) = C1
         C(2) = C2
         C(3) = C3
         D(1) = D1
@@ -259,7 +263,7 @@ end module globals
             	FB(13 + i) = FB(13 + i) + R0(i, 3) * C(3) * (v(3) - 1) - R0(i, 3) * CC(3) * v2(3)
             END DO
             
-            DO i = 1, 3
+            DO i = 1, 3  
             	FB(16 + i) = 0.0
             	r_dash(i) = 0.0
             	rv(i) = 0.0
@@ -335,6 +339,6 @@ end module globals
       PAR(3)=GETP('BV1',7,U)
       !out of place displacement MAX
       PAR(4)=GETP('MAX',7,U)
-
+   
       END SUBROUTINE PVLS
 

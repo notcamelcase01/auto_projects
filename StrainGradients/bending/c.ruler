@@ -1,10 +1,10 @@
 parnames = {1: "$\lambda$", 2:'$\mu$', 3:'Out of plane displacement', 4:'MAX out plane'}
 NDIM =   25, IPS =   4, IRS =   0, ILP =   0, ISP = 2
 ICP = [1, 2, 3, 4],
-NTST=  200, NCOL=   4, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 26, NINT= 0
+NTST=  100, NCOL=   4, IAD =   3, ISP =   2, ISW = 1, IPLT= 0, NBC= 26, NINT= 0
 NMX=  2000, NPR=  20, MXBF=  1, IID =   2, ITMX= 8, ITNW= 6, NWTN= 3, JAC= 0
 EPSL= 1e-06, EPSU = 1e-06, EPSS =0.0001
-DS  = .0001, DSMIN= .0001, DSMAX=   5, IADS=   0
+DS  = .001, DSMIN= .001, DSMAX=   100, IADS=   0
 RL0 = 0.0 RL1 = 0.1
 
 
